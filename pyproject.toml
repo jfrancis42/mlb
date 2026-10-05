@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mlb-stats-sdk"
+version = "0.1.0"
+description = "Python SDK for the MLB Stats API (statsapi.mlb.com)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "GPL-3.0-only"}
+authors = [{name = "Jeff Francis"}]
+keywords = ["mlb", "baseball", "sports", "api", "sdk", "statsapi"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+]
+dependencies = [
+    "requests>=2.31.0",
+    "urllib3>=2.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/jfrancis42/mlb"
+Repository = "https://github.com/jfrancis42/mlb"
+Issues = "https://github.com/jfrancis42/mlb/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mlb*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
